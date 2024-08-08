@@ -106,36 +106,34 @@ def find_max_min(promoter_start, promoter_end, enhancer_start, enhancer_end):
     return maximum, minimum
 
 if __name__ == "__main__":
-    file_name = "c:/Users/13772/OneDrive/Desktop/BU/bio/Fulco/41588_2019_538_MOESM3_ESM.xlsx"
-    sheet_index = 2
-
-    ENSG_index = 1
-    enhancer_start_index = 9
-    enhancer_end_index = 10
-
+    file_name = "C:/Users/13772/OneDrive/文档/GitHub/NeuralRAG/bio/Fulco/41588_2019_538_MOESM3_ESM.xlsx"
+    
+    # table 3a
+    sheet_index = 5
+    GENE_index = 4
+    enhancer_start_index = 1
+    enhancer_end_index = 2
     bool_index = 9
 
     # # enhancer start/end form excel
     bool_data = get_column_data(file_name, sheet_index, bool_index)
-    
-    ENSG_data_raw = get_column_data(file_name, sheet_index, ENSG_index)
+    GENE_data_raw = get_column_data(file_name, sheet_index, GENE_index)
     enhancer_start_data_raw = get_column_data(file_name, sheet_index, enhancer_start_index)
     enhancer_end_data_raw = get_column_data(file_name, sheet_index, enhancer_end_index)
 
-    ENSG_data = []
     enhancer_start_data = []
     enhancer_end_data = []
+    ENSG_data = []
 
     for i in range(len(bool_data)):
         if bool_data[i]: 
-            ENSG_data.append(ENSG_data_raw[i])
+            ENSG_data.append(get_ensembl_id(GENE_data_raw[i]))
             enhancer_start_data.append(enhancer_start_data_raw[i])
             enhancer_end_data.append(enhancer_end_data_raw[i])
 
     # # print(ENSG_data)
     # print(enhancer_start_data)
     # print(enhancer_end_data)
-
 
     # # promoter start/emd from ensembl
     promoter_start_data = []
@@ -170,7 +168,7 @@ if __name__ == "__main__":
 
 
     # get sequence between promoter/enhancer
-    output_folder = 'output_files_mmc2'
+    output_folder = 'dataset/output_files_Fulco_3a'
     os.makedirs(output_folder, exist_ok=True)
 
     for i in range(len(ENSG_data)):
@@ -207,9 +205,7 @@ if __name__ == "__main__":
 
 
 
-# gene_short_name = 'BRCA1'
-# ensembl_id = get_ensembl_id(gene_short_name)
-# print(ensembl_id)
+
 
 
 

@@ -93,7 +93,7 @@ def find_max_min(promoter_start, promoter_end, enhancer_start, enhancer_end):
     return maximum, minimum
 
 if __name__ == "__main__":
-    file_name = "c:/Users/13772/OneDrive/Desktop/BU/bio/Gasperini/mmc2.xlsx"
+    file_name = "C:/Users/13772/OneDrive/文档/GitHub/NeuralRAG/bio/Gasperini/mmc2.xlsx"
     sheet_index = 2
 
     ENSG_index = 1
@@ -157,7 +157,7 @@ if __name__ == "__main__":
 
 
     # get sequence between promoter/enhancer
-    output_folder = 'output_files_mmc2'
+    output_folder = 'dataset/output_files_mmc2'
     os.makedirs(output_folder, exist_ok=True)
 
     for i in range(len(ENSG_data)):
