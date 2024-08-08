@@ -109,11 +109,14 @@ if __name__ == "__main__":
     file_name = "C:/Users/13772/OneDrive/文档/GitHub/NeuralRAG/bio/Fulco/41588_2019_538_MOESM3_ESM.xlsx"
     
     # table 3a
+    # table 3b
+    # table 6a
+    # table 6b
     sheet_index = 5
     GENE_index = 4
     enhancer_start_index = 1
     enhancer_end_index = 2
-    bool_index = 9
+    bool_index = 7
 
     # # enhancer start/end form excel
     bool_data = get_column_data(file_name, sheet_index, bool_index)
@@ -131,11 +134,15 @@ if __name__ == "__main__":
             enhancer_start_data.append(enhancer_start_data_raw[i])
             enhancer_end_data.append(enhancer_end_data_raw[i])
 
-    # # print(ENSG_data)
-    # print(enhancer_start_data)
-    # print(enhancer_end_data)
+    print(len(ENSG_data))
+    print(len(enhancer_start_data))
+    print(len(enhancer_end_data))
 
-    # # promoter start/emd from ensembl
+    ENSG_data = ENSG_data[1:]
+    enhancer_start_data = enhancer_start_data[1:]
+    enhancer_end_data = enhancer_end_data[1:]
+
+    # # promoter start/end from ensembl
     promoter_start_data = []
     promoter_end_data = []
     chromosome_data = []
@@ -168,7 +175,7 @@ if __name__ == "__main__":
 
 
     # get sequence between promoter/enhancer
-    output_folder = 'dataset/output_files_Fulco_3a'
+    output_folder = 'dataset/output_files_Fulco_3b'
     os.makedirs(output_folder, exist_ok=True)
 
     for i in range(len(ENSG_data)):
