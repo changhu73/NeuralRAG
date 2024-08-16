@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics.pairwise import cosine_similarity
 
-embs = torch.load("C:/Users/13772/OneDrive/文档/GitHub/NeuralRAG/test/sequence_embed.pt")
+# embs = torch.load("C:/Users/13772/OneDrive/文档/GitHub/NeuralRAG/test/sequence_embed.pt")
 chunks = torch.load("C:/Users/13772/OneDrive/文档/GitHub/NeuralRAG/test/embedded_chunks.pt")
 
 chunking_embs = []
