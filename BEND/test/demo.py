@@ -14,24 +14,16 @@ def split_dna_sequence(sequence, segment_length=128):
     return [sequence[i:i+segment_length] for i in range(0, len(sequence) - segment_length + 1, segment_length)]
 
 
-with open('/home/guangwei/bio/BEND/test/demoDNA.txt') as f:
+with open('/home/Guangwei/bio/test/demoDNA.txt') as f:
     dna_sequence = f.readline()
 print('Ori DNA length: ', len(dna_sequence)) # 325740
-
-segments = split_dna_sequence(dna_sequence, segment_length=128)
-# embeddings = []
 
 embedder = DNABert2Embedder()
 embedder.max_length = 128
 
+sequence_embed, embedded_chunks = embedder(dna_sequence, upsample_embeddings = True,)
+print(len(embedded_chunks))
+print(embedded_chunks[0].shape)
 
-first_para, embedded_chunks = embedder.embed(dna_sequence, upsample_embeddings=True)
-
-
-# sequence_embed = embedder(segments, upsample_embeddings = True,)
-# print(sequence_embed.shape)
-    # # embedding with mean poolingembeddings.append(torch.mean(hidden_states[0], dim=0).detach().numpy()) # expect to be 768
-# torch.save(sequence_embed, 'sequence_embed.pt')
-
-torch.save(embedded_chunks, '/home/guangwei/bio/BEND/test/embedded_chunks.pt')
+torch.save(embedded_chunks, '/home/Guangwei/bio/test/embedded_chunks.pt')
 

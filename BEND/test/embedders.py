@@ -866,7 +866,6 @@ class DNABert2Embedder(BaseEmbedder):
             for sequence in tqdm(sequences, disable=disable_tqdm):
 
                 chunks = [sequence[chunk : chunk + self.max_length] for chunk in  range(0, len(sequence), self.max_length)] # split into chunks
-                print(len(chunks))
                 embedded_chunks = []
                 for n_chunk, chunk in enumerate(chunks):
                     #print(n_chunk)
