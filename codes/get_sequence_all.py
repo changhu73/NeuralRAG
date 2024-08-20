@@ -40,7 +40,7 @@ def process_files(input_folder, output_folder):
                 output_file.write(sequence)
                 print(f'文件 {output_filename} 已保存。')
 
-input_folder = 'NeuralRAG/dataset/output_files_Fulco_3a'
-output_folder = 'NeuralRAG/DNA_sequence/output_files_Fulco_3a'
+input_folder = 'data/dataset/output_files_Fulco_3a'
+output_folder = 'data/DNA_sequence/output_files_Fulco_3a'
 process_files(input_folder, output_folder)
 

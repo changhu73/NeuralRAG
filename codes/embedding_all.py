@@ -37,7 +37,7 @@ def process_folder(input_folder, output_folder):
             embed_dna_sequence(file_path, embedder, output_folder)
 
 if __name__ == "__main__":
-    input_folder = 'NeuralRAG/DNA_sequence/output_files_Fulco_3a' 
-    output_folder = 'NeuralRAG/embedded_dataset/output_files_Fulco_3a'
+    input_folder = 'data/DNA_sequence/output_files_Fulco_3a' 
+    output_folder = 'data/embedded_dataset/output_files_Fulco_3a'
     
     process_folder(input_folder, output_folder)

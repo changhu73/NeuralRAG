@@ -7,7 +7,7 @@ from tqdm import tqdm
 from transformers import AutoModel, AutoTokenizer
 from transformers.models.bert.configuration_bert import BertConfig
 
-from embedding.embedders import DNABert2Embedder
+from codes.embedders import DNABert2Embedder
 
 
 def split_dna_sequence(sequence, segment_length=128):

@@ -106,7 +106,7 @@ def find_max_min(promoter_start, promoter_end, enhancer_start, enhancer_end):
     return maximum, minimum
 
 if __name__ == "__main__":
-    file_name = "C:/Users/13772/OneDrive/文档/GitHub/NeuralRAG/bio/Fulco/41588_2019_538_MOESM3_ESM.xlsx"
+    file_name = "raw_data_from_papers/Fulco/41588_2019_538_MOESM3_ESM.xlsx"
     
     # table 3a
     # table 3b
@@ -175,7 +175,7 @@ if __name__ == "__main__":
 
 
     # get sequence between promoter/enhancer
-    output_folder = 'dataset/output_files_Fulco_3aaa'
+    output_folder = 'data/dataset/output_files_Fulco_3a'
     os.makedirs(output_folder, exist_ok=True)
 
     for i in range(len(ENSG_data)):
