@@ -110,8 +110,8 @@ if __name__ == "__main__":
     
     # table 3a
     # table 3b
-    # table 6a
-    # table 6b
+    # table 6a failed
+    # table 6b failed
     sheet_index = 5
     GENE_index = 4
     enhancer_start_index = 1
@@ -175,7 +175,7 @@ if __name__ == "__main__":
 
 
     # get sequence between promoter/enhancer
-    output_folder = 'dataset/output_files_Fulco_3b'
+    output_folder = 'dataset/output_files_Fulco_3aaa'
     os.makedirs(output_folder, exist_ok=True)
 
     for i in range(len(ENSG_data)):

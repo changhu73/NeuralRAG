@@ -6,7 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import os
 
 # embs = torch.load("C:/Users/13772/OneDrive/文档/GitHub/NeuralRAG/test/sequence_embed.pt")
-chunks = torch.load("C:/Users/13772/OneDrive/文档/GitHub/NeuralRAG/visualization/embedded_chunks.pt")
+chunks = torch.load("/home/Guangwei/bio/embedding/embedded_chunks.pt")
 
 chunking_embs = []
 for idx, chunk in enumerate(chunks):
@@ -42,7 +42,7 @@ for idx in enhancer_indices:
     if 0 <= idx < first_row.shape[0]:
         plt.text(idx, 1.02, '|', color='red', fontsize=12, ha='center', va='bottom', transform=ax.get_xaxis_transform())
 
-output_folder = "C:/Users/13772/OneDrive/文档/GitHub/NeuralRAG/visualization"
+output_folder = "/home/Guangwei/bio/embedding"
 output_filename = "similarity_heatmap.png"
 output_path = os.path.join(output_folder, output_filename)
 
